@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sort</title>
+    <link rel="stylesheet" href="css/sort.css">
+    <link rel="stylesheet" href="css/bt.css">
+    <script src="js/bt.min.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+
+<style>
+    *,body{
+        padding:0;
+        margin:0;
+        /*width: 100%;*/
+        /*height: 500px;*/
+        overflow-y: hidden;
+    }
+    form{
+        font-size: 12px;
+        margin: 0 auto;
+    }
+    .form-group{
+        margin-bottom: 10px;
+    }
+    .form-control{
+        /*	line-height: 32px;
+        height: 32px;*/
+    }
+    .num-input{
+        width: 600px;
+    }
+    .btn{
+        border: 1px solid #7e7e7e;
+
+    }
+    .dataLeft{
+        float: left;
+        border-right: 2px solid #eee;
+        padding-right: 50px;
+    }
+    .optionsRight{
+        float: left;
+        margin-left: 190px;
+        margin-top: 80px;
+    }
+    .clearfix{
+        clear: both;
+    }
+    .form-group{
+        text-align: right;
+    }
+</style>
+
+<body>
+   <center>
+       <form>
+           <div class="dataLeft">
+               <div class="form-group">
+                   <h3>ArrayList: </h3>
+                   <input id="arrLen" name="arrLen" class="form-control" style="display: inline-block;width: 100px;padding-top: 2px;margin: 20px 10px;" value = '111'>
+                   <input value = 'Generate' class="btn btn-primary" id="createNums" type="button">
+               </div>
+               <div class="form-group">
+                   <h3>OriginalArray：</h3>
+                   <textarea id="arr" name="arr" class="form-control num-input" rows="5">[5,87,100,44,36,55,15,21,19,45,89,12,72,4,7,70,81,6,11,41,58,30,38,16,48,41,24,59,67,91,25,63,40,11,46,39,25,77,32,54,66,98,83,58,7,82,69,40,47,45,52,43,72,17,39,84,90,72,100,54,26,50,22,74,72,58,66,19,100,37,63,74,60,50,28,70,27,16,45,57,38,6,11,75,95,60,87,73,39,27,63,91,63,76,88,96,30,40,46,50,67,49,7,55,80,11,74,52,76,35,21]</textarea>
+               </div>
+           </div>
+
+           <div class="optionsRight">
+               <div class="form-group">
+                   <span style="font-weight: bold;font-size: 16px;">Speed: </span>
+                   <div class="btn-group">
+                       <input id="speedUp" value="speedUp" class="btn btn-warning" type="button">
+                       <input id="pause" value="pause" class="btn btn-warning" type="button">
+                       <input id="slowDown" value="slowDown" class="btn btn-warning" type="button">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <span style="font-weight: bold;font-size: 16px;">CommonSorts: </span>
+                   <div class="btn-group">
+                       <input id="bubble" value="Bubble" class="btn btn-success" type="button">
+                       <input id="insert" value="Insert" class="btn btn-success" type="button">
+                       <input id="select" value="Select" class="btn btn-success" type="button">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <span style="font-weight: bold;font-size: 16px;">AdvanceSorts: </span>
+                   <div class="btn-group">
+                       <input id="quick" value="Quick I" class="btn btn-danger" type="button">
+                       <input id="quick2" value="Quick II" class="btn btn-danger" type="button">
+                       <input id="merge" value="Merge" class="btn btn-danger" type="button">
+                       <input id="shell" value="Shell" class="btn btn-danger" type="button">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <span style="font-weight: bold;font-size: 16px;">Goto: </span>
+                   <a href="Dijkstra.html" class="btn btn-primary" role="button">Dijkstra Algrithm</a>
+               </div>
+           </div>
+           <div class="clearfix"></div>
+       </form>
+       <ul class="ulWrapper">
+       </ul>
+   </center>
+<script>
+    // var arr = [5,0,2,9,3,4,6,1,8];
+    // var a = [9,8,7,6,5,4,3,2,1,0];
+    // var c = [43,27,39,17,32,21,14,42,22,15,18,12,46,1,16,10,4,29,3,23,24,49,0,5,36,13,34,6,19,47,9,33,31,20,28,44,38,37,41,40,8,35,30,7,11,45,2,25,48,26];
+</script>
+<script src="js/sortAgs.js"></script>
+<script src="js/animation.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单源最短路</title>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/bt.css">
+    <script src="js/bt.min.js"></script>
+    <style>
+        *,body{
+            padding: 0;
+            margin: 0;
+            overflow-y: hidden;
+        }
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .textWrapper{
+            width: 20%;
+            height: 100vh;
+            float: right;
+            /*background-color: red;*/
+            border-left: solid 2px #eee;
+            overflow-y: scroll;
+
+        }
+        .animationWrapper{
+            width: 80%;
+            height: 100vh;
+            float: right;
+            /*background-color: black;*/
+        }
+        .clearfix{
+            clear: both;
+        }
+        .options{
+            height: 20%;
+            height: 20vh;
+            margin: 20px 0;
+            /*background-color: #34aaf1;*/
+        }
+        .animation {
+            height: 100%;
+            width:100%;
+            /*background-color: #678945;*/
+            position: relative;
+        }
+        .vertex{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: red;
+            text-align: center;
+            position:fixed;
+            z-index:999;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .weight{
+            height: 20px;
+            width: 20px;
+            border-radius: 2px;
+            position: fixed;
+            /*background-color: #eee;*/
+            opacity: 0.5;
+            /*border-radius: 2px;*/
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .lineWrap{
+            position: fixed;
+            left:25px;
+            top:25px;
+            overflow:visible;
+        }
+        .textItem{
+            background-color: #eee;
+            opacity: 0.8;
+            margin:5px 0;
+            position: relative;
+            animation: itemInfo .1s;
+        }
+        .textItemLeft{
+            width: 5px;
+            background-color: red;
+            height: 100%;
+            position: absolute;
+            float: left;
+        }
+        .textItemRight{
+            float: left;
+            margin-left: 10px;
+        }
+        @keyframes itemInfo {
+            0% {left:80px;}
+            25% {left: 50px;}
+            50% {left: 30px;}
+            75% {left: 20px;}
+            89% {left: 5px;}
+            100%{left:0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="textWrapper" id="textWrapper">
+            <center style="padding-top: 30px;margin-bottom: 20px;">
+                <h2>信息流</h2>
+            </center>
+            <div class="textItem">
+                <div class="textItemLeft"></div>
+                <div class="textItemRight">
+                    <h5>Welcome-DijkstraAg</h5>
+                    <span>隐藏操作：可点击权值进行修改;<br/>展望：增加点击连接两节点。</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="animationWrapper">
+            <div class="options">
+                <center>
+                    <button class="btn btn-primary" id="clearGraphBtn">清空图</button>
+                    <button class="btn btn-primary" id="clearEdge">清空边</button>
+                    <button class="btn btn-primary" id="generateEdgeRandomly">随机生成边</button>
+                    <button class="btn btn-primary" id="generateGraph">随机生成图</button>
+                    <a href="Sort.html" role="button" class="btn btn-danger">前往排序算法</a>
+                </center>
+                <center>
+                    <button class="btn btn-success" id="generateVertex">生成节点</button>
+                    <input class="form-control" style="width: 10%;display: inline-block;margin-top: 5px;padding-top: 2px;" type="text" placeholder="节点个数" id="vertexAmount">
+                </center>
+                <center>
+                    <button class="btn btn-success" id="dijkstra">生成最短路</button>
+                    <input class="form-control" style="width: 10%;display: inline-block;margin-top: 5px;padding-top: 2px;" type="text" placeholder="源点" id="originalVertex" value="v0">
+                </center>
+            </div>
+            <div class="animation" id="divele">
+                <div class="vertexWrapper" id="vertexWrapper">
+                    <!--<div class="vertex" style="top: 40%;left: 20%">5</div>-->
+                    <!--<div class="vertex" style="top: 50%;left: 30%">6</div>-->
+                </div>
+                <div class="edgeWrapper" id="edgeWrapper">
+                    <!--<div class="weight" style="left: 100px;top: 200px;">12</div>-->
+                    <!--<svg class="lineWrap" id="v1v1">-->
+                        <!--<line x1="50" y1="100" x2="400" y2="400" stroke="red" stroke-width="2"></line>-->
+                    <!--</svg>-->
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</body>
+<script src="js/dj.js"></script>
+</html>
